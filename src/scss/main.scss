@@ -1,0 +1,195 @@
+@import "./base.scss";
+@import "./variables.scss";
+
+@import "./components/navbar.scss";
+@import "./components/footer.scss";
+@import "./components/order-form.scss";
+@import "./components/payment-summary.scss";
+@import "./components/modal.scss";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: $white;
+  color: $black;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button,
+ul,
+li {
+  outline: none;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: $gray;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+
+  &--login {
+    @include font-custom(18px, 700);
+    margin-right: 25px;
+    color: $white;
+    background: none;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &--register {
+    width: 161px;
+    @include font-custom(18px, 700);
+    padding: 14px 12px 14px 12px;
+    color: $white;
+    background: $orange;
+    border-radius: 50px;
+
+    &:hover {
+      background: $orange-hover;
+    }
+  }
+
+  &--login-mobile {
+    width: 161px;
+    @include font-custom(18px, 700);
+    color: $white;
+    background: $orange;
+    border: 2px solid $white;
+    border-radius: 50px;
+    margin: 15px 0 15px 0;
+  }
+
+  &--register-mobile {
+    width: 161px;
+    @include font-custom(18px, 700);
+    color: $black;
+    background: $white;
+    border-radius: 50px;
+  }
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+
+  &.btn-primary {
+    @include font-custom(18px, 700);
+    padding: 14px 12px 14px 12px;
+    color: $white;
+    background: $orange;
+    border-radius: 50px;
+
+    &:hover {
+      background: $orange-hover;
+    }
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.hidden-radio {
+  display: none;
+}
+
+.hidden-radio + label {
+  padding: 10px;
+  border: 1px solid #b7b7b7;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.hidden-radio + label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: orange;
+  display: none;
+}
+
+.hidden-radio:checked + label {
+  border: 1px solid orange;
+}
+
+.hidden-radio:checked + .pizza-label {
+  border-color: $orange !important;
+  background-color: lighten($orange, 20%);
+}
+
+.hidden-radio:checked + label::after {
+  display: block;
+}
+
+.hidden-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-checkbox {
+  @include font-custom(18px, 700);
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: $white;
+  border: 1px solid $gray;
+  border-radius: 50px;
+  text-align: center;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.custom-checkbox:not(.checkbox-disabled):hover {
+  color: $orange;
+  border: 1px solid $orange;
+}
+
+.checkbox-checked {
+  color: $orange;
+  border: 1px solid $orange;
+  background-color: $orange-light;
+}
+
+.checkbox-disabled {
+  background-color: $gray-light;
+  border: 1px solid $gray-light;
+  color: $gray-alt;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 1250px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 16px;
+  }
+}

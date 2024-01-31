@@ -1,0 +1,218 @@
+.order-section {
+  padding: 150px 0;
+
+  form {
+    @include flex-custom(space-between, flex-start);
+    flex-wrap: wrap;
+  }
+}
+
+.order-section {
+  &--wrapper {
+    &--pizza,
+    &--custom-pizza {
+      &--title {
+        @include font-custom(48px, 700);
+        margin-bottom: 25px;
+        color: $orange;
+      }
+    }
+
+    &--pizza {
+      margin-bottom: 150px;
+    }
+  }
+}
+
+.pizza-options {
+  @include flex-custom(space-between, center);
+
+  &--content {
+    @include flex-custom(space-between, center);
+    gap: 25px;
+  }
+
+  div p {
+    @include font-custom(20px, 700);
+    margin-bottom: 5px;
+    color: $black;
+  }
+
+  div .final-price {
+    @include font-custom(20px, 400);
+    color: $black;
+  }
+
+  div .full-price {
+    @include font-custom(20px, 400);
+    color: $gray-alt;
+    margin-left: 5px;
+  }
+
+  div.selected-pizza p,
+  div.selected-pizza .final-price {
+    color: $white;
+  }
+
+  div.selected-pizza .full-price {
+    color: $gray-light;
+  }
+
+  .pizza-label {
+    @include flex-center;
+    padding: 35px 40px;
+    border: 1px solid $gray;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s ease-in-out;
+
+    .pizza-image {
+      transition: transform 0.35s ease-in-out;
+    }
+
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+
+    &:hover {
+      background-color: $orange-light;
+      border: 1px solid $orange;
+
+      .pizza-image {
+        transform: rotate(20deg);
+      }
+    }
+
+    &.selected-pizza {
+      background-color: $orange;
+      border: 1px solid $orange;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+.size-options {
+  &--title {
+    @include font-custom(24px, 700);
+    margin-bottom: 25px;
+  }
+  &--wrapper {
+    @include flex-custom(flex-start, center);
+    gap: 25px;
+
+    div {
+      @include font-custom(20px, 400);
+      @include flex-custom(start, center);
+      width: 100%;
+      max-width: 135px;
+      label {
+        p {
+          position: absolute;
+          top: -4px;
+          left: 30px;
+
+          span {
+            color: $gray-alt;
+            margin-left: 5px;
+          }
+        }
+      }
+
+      &:last-child {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.toppings-options {
+  &--title {
+    @include font-custom(24px, 700);
+    margin-bottom: 25px;
+  }
+  &--list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+  }
+}
+
+.size-options,
+.toppings-options {
+  padding: 25px 0;
+}
+
+@media screen and (max-width: 1250px) {
+  .order-section {
+    padding: 150px 0;
+
+    form {
+      @include flex-custom(center, flex-start);
+      flex-wrap: wrap;
+    }
+  }
+
+  .pizza-options {
+    &--content {
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .order-section {
+    padding: 100px 0;
+
+    &--wrapper {
+      width: 100%;
+    }
+  }
+
+  .pizza-options {
+    flex-direction: column;
+    .pizza-label {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-right: 0px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .size-options {
+    &--wrapper {
+      @include flex-custom(start, start);
+      flex-direction: column;
+      div {
+        &:last-child {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+
+  .toppings-options {
+    &--list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .order-section {
+    padding: 50px 0;
+  }
+
+  .toppings-options {
+    &--list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

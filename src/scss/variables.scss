@@ -1,0 +1,27 @@
+$pure-white: #ffffff;
+$white: #f8f8f6;
+$orange: #e77e23;
+$orange-hover: #c16515;
+$orange-light: #f5e9e0;
+$black: #333333;
+$black-alt: #4d4d4d;
+$gray: #626f79;
+$gray-alt: #919191;
+$gray-light: #e3e3e3;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-custom($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font-custom($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
