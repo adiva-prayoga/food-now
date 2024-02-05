@@ -35,7 +35,9 @@ export default {
 
     watch(selectedPizza, () => {
       selectedSize.value = props.sizes.find((size) => size.name === "Small");
-      selectedToppings.value = [];
+      selectedToppings.value = selectedToppings.value.filter((topping) =>
+        selectedPizza.value.toppings.includes(topping.id)
+      );
     });
 
     return {
