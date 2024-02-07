@@ -1,3 +1,21 @@
+<script>
+export default {
+  name: "Footer",
+  data() {
+    return {
+      navigationItems: ["Home", "Order", "About", "Blog"],
+      accountItems: ["Contact", "Login", "Register"],
+      locationAddress:
+        "Jl. Raya Kerobokan Br Taman, Kuta No.98, Kerobokan Kelod, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
+      copyrightText:
+        "Copyright © 2022 Foodnow. All Rights Reserved. Powered by PT. Timedoor Indonesia. | Privacy Policy",
+      privacyPolicyText:
+        "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.",
+    };
+  },
+};
+</script>
+
 <template>
   <footer class="footer container">
     <div class="footer--content">
@@ -59,21 +77,3 @@
     </div>
   </footer>
 </template>
-
-<script>
-export default {
-  name: "Footer",
-  data() {
-    return {
-      navigationItems: ["Home", "Order", "About", "Blog"],
-      accountItems: ["Contact", "Login", "Register"],
-      locationAddress:
-        "Jl. Raya Kerobokan Br Taman, Kuta No.98, Kerobokan Kelod, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
-      copyrightText:
-        "Copyright © 2022 Foodnow. All Rights Reserved. Powered by PT. Timedoor Indonesia. | Privacy Policy",
-      privacyPolicyText:
-        "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.",
-    };
-  },
-};
-</script>

@@ -1,18 +1,19 @@
 <script>
+import { defineComponent } from "vue";
 import ButtonVariant from "./ButtonVariant.vue";
 
-export default {
+export default defineComponent({
+  name: "Modal",
   props: {
     show: {
       type: Boolean,
       required: true,
     },
   },
-  name: "Modal",
   components: {
     ButtonVariant,
   },
-};
+});
 </script>
 
 <style scoped>
@@ -29,9 +30,6 @@ export default {
       <img src="/assets/modal.svg" alt="" />
       <h2>Order Success</h2>
       <p>Thank you, we have received your order successfully.</p>
-      <ButtonVariant @click="$emit('close')" variant="primary"
-        >Close</ButtonVariant
-      >
     </div>
   </div>
 </template>

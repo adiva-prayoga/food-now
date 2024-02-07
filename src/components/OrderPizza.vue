@@ -1,20 +1,25 @@
 <script>
+import { ref } from "vue";
 import OrderForm from "./OrderForm.vue";
 import sizeList from "../utils/size-list.json";
 import pizzaList from "../utils/pizza-list.json";
 import toppingList from "../utils/topping-list.json";
 
 export default {
-  data() {
-    return {
-      sizes: sizeList.data,
-      pizzas: pizzaList.data,
-      toppings: toppingList.data,
-    };
-  },
   name: "OrderPizza",
   components: {
     OrderForm,
+  },
+  setup() {
+    const sizes = ref(sizeList.data);
+    const pizzas = ref(pizzaList.data);
+    const toppings = ref(toppingList.data);
+
+    return {
+      sizes,
+      pizzas,
+      toppings,
+    };
   },
 };
 </script>

@@ -1,13 +1,3 @@
-<template>
-  <button
-    :class="['btn', `btn-${variant}`]"
-    :style="{ width: customWidth ? '100%' : `${customWidth}px` }"
-    @click="onClick"
-  >
-    <slot></slot>
-  </button>
-</template>
-
 <script>
 export default {
   name: "ButtonVariant",
@@ -32,3 +22,13 @@ export default {
   },
 };
 </script>
+
+<template>
+  <button
+    :class="['btn', `btn-${variant}`]"
+    :style="{ width: customWidth ? '100%' : `${customWidth}px` }"
+    @click="onClick"
+  >
+    <slot></slot>
+  </button>
+</template>
